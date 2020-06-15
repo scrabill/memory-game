@@ -52,4 +52,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
         img: "🍰"
       }
     ]
+
+    const grid = document.querySelector(".grid")
+
+    function createBoard() {
+      for (let i = 0; i < cardArray.length; i++) {
+        let card = document.createElement('div')
+
+        card.setAttribute('data-id', i)
+        card.innerHTML = cardArray[i].img
+        // card.addEventListener('click', flipcard)
+
+        grid.appendChild(card)
+      }
+    }
+
+    createBoard()
 });
