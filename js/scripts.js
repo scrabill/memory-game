@@ -65,6 +65,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
       }
     ]
 
+    // Randomise the card position with each gameplay
+
+    cardArray.sort(() => 0.5 - Math.random())
+
     const grid = document.querySelector(".grid")
     const result = document.querySelector("#result")
     let cardsChosen = []
