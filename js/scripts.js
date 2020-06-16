@@ -4,52 +4,64 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const cardArray = [
       {
         name: "fries",
-        img: "🍟"
+        img: "img/fries.png",
+        emoji: "🍟"
       },
       {
         name: "fries",
-        img: "🍟"
+        img: "img/fries.png",
+        emoji: "🍟"
       },
       {
         name: "cheeseburger",
-        img: "🍔"
+        img: "img/burger.png",
+        emoji: "🍔"
       }
       ,
       {
         name: "cheeseburger",
-        img: "🍔"
+        img: "img/burger.png",
+        emoji: "🍔"
       },
       {
         name: "hotdog",
-        img: "🌭"
+        img: "img/hotdog.png",
+        emoji: "🌭"
       },
       {
         name: "hotdog",
-        img: "🌭"
+        img: "img/hotdog.png",
+        emoji: "🌭"
       },
       {
         name: "icecream",
-        img: "🍦"
+        img: "img/icecream.png",
+        emoji: "🍦"
       },
       {
         name: "icecream",
-        img: "🍦"
+        img: "img/icecream.png",
+        emoji: "🍦"
       },
       {
         name: "pizza",
-        img: "🍕"
+        img: "img/pizza.png",
+        emoji: "🍕"
       },
       {
         name: "pizza",
-        img: "🍕"
+        img: "img/pizza.png",
+        emoji: "🍕"
       },
       {
         name: "cake",
-        img: "🍰"
+        img: "img/cake.png",
+        emoji: "🍰"
       },
       {
         name: "cake",
-        img: "🍰"
+        img: "img/cake.png",
+        emoji: "🍰"
       }
     ]
 
@@ -57,10 +69,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     function createBoard() {
       for (let i = 0; i < cardArray.length; i++) {
-        let card = document.createElement('div')
+        let card = document.createElement('img')
 
+        // Use this when using images for the cards
+        card.setAttribute('src', 'img/blank.png')
         card.setAttribute('data-id', i)
-        card.innerHTML = cardArray[i].img
+
+        // Use this when using an emoji instead of an image
+        // let card = document.createElement('div')
+        // card.setAttribute('data-id', i)
+        // card.innerHTML = cardArray[i].emoji
         // card.addEventListener('click', flipcard)
 
         grid.appendChild(card)
