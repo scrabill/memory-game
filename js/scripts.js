@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       const optionTwoID = cardsChosenID[1]
 
       // Can I use the variable names here?
-      if (cardsChosenID[0] === cardsChosenID[1]) {
+      if (cardsChosen[0] === cardsChosen[1]) {
         alert("You found a match!")
         cards[optionOneID].setAttribute('src', 'img/blank.png')
         cards[optionTwoID].setAttribute('src', 'img/blank.png')
@@ -118,10 +118,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
       cardsChosen = []
       cardsChosenID = []
 
-      results.textContent = cardsWon.length
+      result.textContent = cardsWon.length
 
       if (cardsWon.length === cardArray.length / 2) {
-        results.textContent = 'Congrats! You found then all!'
+        result.textContent = 'Congrats! You found then all!'
       }
     }
 
