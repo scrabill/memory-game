@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // Use this when using images for the cards
         card.setAttribute('src', 'img/back.png')
         card.setAttribute('data-id', i)
+        card.addEventListener('click', flipcard)
 
         // Use this when using an emoji instead of an image
         // let card = document.createElement('div')
@@ -130,7 +131,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       let cardID = this.getAttribute('data-id')
       cardsChosen.push(cardArray[cardID].name)
       cardsChosenID.push(cardID)
-      this.setAttribute['src', cardArray[cardID].img]
+      this.setAttribute('src', cardArray[cardID].img)
 
       // When two cards have been chosen, wait, then see if they match
       if (cardsChosen.length === 2) {
