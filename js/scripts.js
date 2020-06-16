@@ -66,6 +66,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     ]
 
     const grid = document.querySelector(".grid")
+    let cardsChosen = []
+    let cardsChosenID = []
 
     function createBoard() {
       for (let i = 0; i < cardArray.length; i++) {
@@ -86,4 +88,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     createBoard()
+
+    // Flip card
+
+    function flipcard() {
+      let cardID = this.getAttribute('data-id')
+      cardsChosen.push(cardArray[cardID].name)
+      cardsChosenID.push(cardID)
+      this.setAttribute['src', cardArray[cardID].img]
+
+      // When two cards have been chosen, wait, then see if they match
+      if (cardsChosen.length === 2) {
+        setTimeout(checkForMatch, 500)
+      }
+
+    }
+
 });
