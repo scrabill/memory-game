@@ -11,5 +11,6 @@ https://www.freecodecamp.org/news/learn-javascript-by-building-7-games-video-cou
 
 # Enhancements
 
+- Clicking a blank or played card should not happen
 - Emoji or SVGs instead of images? State for flipped cards?
 - Host remotely?
