@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     ]
 
     const grid = document.querySelector(".grid")
+    const result = document.querySelector("#result")
     let cardsChosen = []
     let cardsChosenID = []
     let cardsWon = []
@@ -110,7 +111,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
       }
 
       cardsChosen = []
-      cardsChosenID= []
+      cardsChosenID = []
+
+      results.textContent = cardsWon.length
+
+      if (cardsWon.length === cardArray.length / 2) {
+        results.textContent = 'Congrats! You found then all!'
+      }
     }
 
     // Flip card
