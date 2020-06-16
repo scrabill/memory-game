@@ -68,13 +68,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const grid = document.querySelector(".grid")
     let cardsChosen = []
     let cardsChosenID = []
+    let cardsWon = []
 
     function createBoard() {
       for (let i = 0; i < cardArray.length; i++) {
         let card = document.createElement('img')
 
         // Use this when using images for the cards
-        card.setAttribute('src', 'img/blank.png')
+        card.setAttribute('src', 'img/back.png')
         card.setAttribute('data-id', i)
 
         // Use this when using an emoji instead of an image
@@ -88,6 +89,29 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     createBoard()
+
+    // Check for checkForMatch
+
+    function checkForMatch() {
+      let cards = document.querySelectorAll('img')
+      const optionOneID = cardsChosenID[0]
+      const optionTwoID = cardsChosenID[1]
+
+      // Can I use the variable names here?
+      if (cardsChosenID[0] === cardsChosenID[1]) {
+        alert("You found a match!")
+        cards[optionOneID].setAttribute('src', 'img/blank.png')
+        cards[optionTwoID].setAttribute('src', 'img/blank.png')
+        cardsWon.push(cardsChosen)
+      } else {
+        cards[optionOneID].setAttribute('src', 'img/back.png')
+        cards[optionTwoID].setAttribute('src', 'img/back.png')
+        alert("Sorry. That's not a match")
+      }
+
+      cardsChosen = []
+      cardsChosenID= []
+    }
 
     // Flip card
 
